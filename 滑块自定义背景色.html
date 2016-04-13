@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>滑块自定义背景色</title>
+    <style>
+        div{float: left;width: 200px;height: 300px;border: 1px solid red}
+    </style>
+    <script>
+        function $(id) {
+            return document.getElementById(id);
+        }
+        function range_click() {
+            var r=$("rangeRed").value;
+            var g=$("rangeGreen").value;
+            var b=$("rangeBlue").value;
+            $("showColor").style.backgroundColor="rgb("+r+","+g+","+b+")";
+        }
+    </script>
+</head>
+<body>
+<div>
+    R:0<input type="range" id="rangeRed" value="0" min="0" max="255" onchange="range_click()">255<br/>
+    G:0<input type="range" id="rangeGreen" value="0" min="0" max="255" onchange="range_click()">255<br/>
+    B:0<input type="range" id="rangeBlue" value="0" min="0" max="255" onchange="range_click()">255<br/>
+</div>
+<div id="showColor"></div>
+</body>
+</html>

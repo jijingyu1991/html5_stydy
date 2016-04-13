@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        table{border:1px solid black;border-collapse: collapse; }
+        th,td{border: 1px solid black;padding: 5px}
+    </style>
+    <script>
+        function txtrange_change(){
+            var value=document.frm.txtrange.value;
+            console.log("RangeVale"+value);
+        }
+        function getValue() {
+            var value=document.frm.txtcolor.value;
+            console.log("RangeVale"+value);
+        }
+    </script>
+</head>
+<body>
+<table>
+    <form name="frm">
+        <table>
+            <tr>
+                <th>名称</th>
+                <th>空间</th>
+                <th>说明</th>
+            </tr>
+            <tr>
+                <td>Email</td>
+                <td><input type="email" name="txtemail" id="txtemail"></td>
+                <td>输入email类型数据，提交时进行数据验证</td>
+            </tr>
+            <tr>
+                <td>search</td>
+                <td><input type="search" name="txtsearch" id="txtsearch"></td>
+                <td>搜索文本框与text相似，可以快速删除</td>
+            </tr>
+            <tr>
+                <td>url</td>
+                <td><input type="url" name="txturl" id="txturl"></td>
+                <td>对用户输入数据进行url检测，必须且仅需（http://）</td>
+            </tr>
+            <tr>
+                <td>tel</td>
+                <td><input type="tel" name="txttel" id="txttel"></td>
+                <td>仅对移动终端有效，显示拨号键盘，通过拨号键盘接受用户数据</td>
+            </tr>
+            <tr>
+                <td>number</td>
+                <td><input type="number" name="txtnumber" id="txtnumber" min="18" max="80" step="1"></td>
+                <td>只接受数字，可设置上下限及步长</td>
+            </tr>
+            <tr>
+                <td>range</td>
+                <td><input type="range" name="txtrange" id="txtrange" min="18" max="80" step="1" value="18" onchange="txtrange_change()"> </td>
+                <td>提供滑块数据给用户选择指定范围内的数值</td>
+            </tr>
+            <tr>
+                <td>color</td>
+                <td><input type="color" name="txtcolor" id="txtcolor"> </td>
+                <td>弹出调色板供用户取值</td>
+            <tr>
+                <td colspan="3" align="center">
+                    <input type="submit" value="提交">
+                    <input type="button" value="取值"  onclick="getValue()">
+                </td>
+            </tr>
+        </table>
+    </form>
+</table>
+</body>
+</html>
